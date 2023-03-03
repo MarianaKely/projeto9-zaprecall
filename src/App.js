@@ -1,25 +1,88 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// General configuration page and rendering of zaprecall - outset
+
+import React from 'react';
+import {useState} from "react";
+import styled from 'styled-components';
+
+// Import files from js pages - outset
+
+import Cards from "./components/Cards"
+import Deck from"./components/Deck"
+
+// Import files from js pages - end
+
+
+
+export default function App () {
+
+// Constants that enable functionalities on the App.js - outset
+
+    
+    const [icon, setIcon] = useState("")
+    const [questionsarray] = useState([...Deck.sort( () => .3 - Math.random() )])
+    const [ticket] = useState([...questionsarray.slice(0,20)])
+    const [trailingslash, setTrailingslash] = useState([])
+    const [finished, setFinished] = useState(0)
+    const [untap, setUntap] = useState([])  
+    const [toturn, setToturn] = useState([])  
+    const [result, setResult] = useState([])  
+
+
+ // Constants that enable functionalities on the App.js - end
+
+
+    return (
+
+
+// Creation configuration of page layout- outset 
+
+
+    <ScreenContainer>
+
+        {ticket.map((flahscard, index) => (
+        <Cards
+        key={index}
+        summary={index}
+        flahscard={flahscard}
+        untap= {untap}
+        setUntap = {setUntap}
+        toturn = {toturn}
+        setToturn = {setToturn}
+        result = {result}
+        setResult = {setResult}
+        setFinished = {setFinished}
+        finished = {finished}
+        setTrailingslash={setTrailingslash}
+        trailingslash = {trailingslash}
+        icon = {icon}
+        setIcon = {setIcon}
+        />
+        ))}
+
+    </ScreenContainer>
+    )
+
+  // Creation configuration of page layout- end    
+
 }
 
-export default App;
+
+// App.js page styling - outset
+
+
+const ScreenContainer = styled.header`
+    box-sizing: borderbox;
+    width: 375px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FB6B6B;
+    padding-bottom: 200px;
+`
+
+
+// App.js page styling - end
+
+// General configuration page and  rendering of zaprecall - end
