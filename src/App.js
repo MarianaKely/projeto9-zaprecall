@@ -9,6 +9,7 @@ import styled from 'styled-components';
 
 import Cards from "./components/Cards"
 import Deck from"./components/Deck"
+import Footer from "./components/Footer"
 
 // Import files from js pages - end
 
@@ -58,7 +59,14 @@ export default function App () {
         icon = {icon}
         setIcon = {setIcon}
         />
+        
         ))}
+
+       <Footer
+       ticket = {ticket}
+       finished = {finished}
+       trailingslash = {trailingslash}
+/>
 
     </ScreenContainer>
     )

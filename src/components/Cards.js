@@ -45,6 +45,8 @@ export default function Cards({
 
 
 // Constants that enable functionalities on the Cards.js - end
+
+// Cards.js layout - outset
     
 
     return (
@@ -130,6 +132,8 @@ export default function Cards({
 
     )
 }
+
+// Cards.js layout - end
 
 
 /* 
