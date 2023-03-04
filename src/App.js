@@ -7,9 +7,10 @@ import styled from 'styled-components';
 
 // Import files from js pages - outset
 
-import Cards from "./components/Cards"
-import Deck from"./components/Deck"
-import Footer from "./components/Footer"
+import Cards from "./components/Cards";
+import Deck from"./components/Deck";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 // Import files from js pages - end
 
@@ -17,18 +18,20 @@ import Footer from "./components/Footer"
 
 export default function App () {
 
+
 // Constants that enable functionalities on the App.js - outset
 
     
-    const [icon, setIcon] = useState("")
-    const [questionsarray] = useState([...Deck.sort( () => .3 - Math.random() )])
-    const [ticket] = useState([...questionsarray.slice(0,20)])
-    const [trailingslash, setTrailingslash] = useState([])
-    const [finished, setFinished] = useState(0)
-    const [untap, setUntap] = useState([])  
-    const [toturn, setToturn] = useState([])  
-    const [result, setResult] = useState([])  
-
+    const [untap, setUntap] = useState([]);  
+    const [toturn, setToturn] = useState([]);  
+    const [result, setResult] = useState([]);  
+    const [finished, setFinished] = useState(0);
+    const [trailingslash, setTrailingslash] = useState([]);
+    const [icon, setIcon] = useState("");
+    const [questionsarray] = useState([...Deck.sort( () => .3 - Math.random() )]);
+    const [ticket] = useState([...questionsarray.slice(0,20)]);
+   
+   
 
  // Constants that enable functionalities on the App.js - end
 
@@ -41,37 +44,41 @@ export default function App () {
 
     <ScreenContainer>
 
+        <Header/>
+
         {ticket.map((flahscard, index) => (
         <Cards
-        key={index}
-        summary={index}
-        flahscard={flahscard}
-        untap= {untap}
-        setUntap = {setUntap}
-        toturn = {toturn}
-        setToturn = {setToturn}
-        result = {result}
-        setResult = {setResult}
-        setFinished = {setFinished}
-        finished = {finished}
-        setTrailingslash={setTrailingslash}
-        trailingslash = {trailingslash}
-        icon = {icon}
-        setIcon = {setIcon}
+          key={index}
+          summary={index}
+          flahscard={flahscard}
+          untap= {untap}
+          setUntap = {setUntap}
+          toturn = {toturn}
+          setToturn = {setToturn}
+          result = {result}
+          setResult = {setResult}
+          setFinished = {setFinished}
+          finished = {finished}
+          setTrailingslash={setTrailingslash}
+          trailingslash = {trailingslash}
+          icon = {icon}
+          setIcon = {setIcon}
         />
         
         ))}
 
        <Footer
-       ticket = {ticket}
-       finished = {finished}
-       trailingslash = {trailingslash}
+         ticket = {ticket}
+         finished = {finished}
+         trailingslash = {trailingslash}
 />
 
     </ScreenContainer>
     )
 
+
   // Creation configuration of page layout- end    
+
 
 }
 

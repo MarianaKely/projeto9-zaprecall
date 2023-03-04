@@ -1,7 +1,7 @@
 
 // General configuration and rendering the cards - outset
 
-import React from 'react'
+import React from 'react';
 import { useState } from "react";
 import styled from 'styled-components';
 
@@ -20,18 +20,18 @@ import remembered from "../assets/img/icone_certo.png";
 
 
 export default function Cards({
-    flahscard,
-    summary,
     untap,
     setUntap,
-    setToturn,
+    flahscard,
+    summary,
     toturn,
+    setToturn,
     result,
     setResult,
     finished,
     setFinished,
-    setTrailingslash,
-    trailingslash
+    trailingslash,
+    setTrailingslash    
 
 }) {
 
@@ -39,9 +39,9 @@ export default function Cards({
 // Constants that enable functionalities on the Cards.js - outset
     
 
-    const [endgame, setEndgame] = useState("")
-    const [endgamestatus, setEndgamestatus] = useState("")
-    const [icon, setIcon] = useState("")
+    const [endgame, setEndgame] = useState("");
+    const [endgamestatus, setEndgamestatus] = useState("");
+    const [icon, setIcon] = useState("");
 
 
 // Constants that enable functionalities on the Cards.js - end
@@ -50,52 +50,55 @@ export default function Cards({
     
 
     return (
+        
         <div data-test="flashcard"> 
 
 
             <Questionbox display={untap.includes(flahscard) ? true : false} >
+
                 <p data-test="flashcard-text" >pergunta {summary + 1}</p>
-                <img data-test="play-btn" src={startbutton} 
-                    onClick={() => {
-                        setUntap([...untap, flahscard])
-                    }}></img>
+                <img data-test="play-btn" src={startbutton}  onClick={() => { setUntap([...untap, flahscard]) }}></img>
+
             </Questionbox>
 
 
             <Otherquestionbox display={!untap.includes(flahscard) || toturn.includes(flahscard) ? true : false}>
+
                 <h1 data-test="flashcard-text" >{flahscard.question}</h1>
-                <img data-test="turn-btn" src={turnbutton} 
-                    onClick={() => {
-                        setToturn([...toturn, flahscard])
-                    }}></img>
+                <img data-test="turn-btn" src={turnbutton} onClick={() => {setToturn([...toturn, flahscard]) }}></img>
+
             </Otherquestionbox>
 
 
             <Resultbox display={!toturn.includes(flahscard) || result.includes(flahscard) ? true : false}>
+
                 <h1 data-test="flashcard-text" >{flahscard.answer}</h1>
 
                 <div>
 
 
-                    <Resultoptions data-test="no-btn" color="#FF3030"
-                        onClick={() => {
+                    <Resultoptions data-test="no-btn" color="#FF3030" onClick={() => {
+
                             setResult([...result, flahscard])
                             setFinished(finished + 1)
-                            setEndgame(forgot)
-                            setEndgamestatus("#FF3030")
                             setIcon("no-icon")
+                            setEndgamestatus("#FF3030")
+                            setEndgame(forgot)
                             setTrailingslash([...trailingslash, forgot])
+
+
                         }}
+
                     > Não lembrei</Resultoptions>
 
 
-                    <Resultoptions data-test="partial-btn" color="#FF922E"
-                        onClick={() => {
+                    <Resultoptions data-test="partial-btn" color="#FF922E" onClick={() => {
+
                             setResult([...result, flahscard])
                             setFinished(finished + 1)
-                            setEndgame(almost)
-                            setEndgamestatus("#FF922E")
                             setIcon("partial-icon")
+                            setEndgamestatus("#FF922E")
+                            setEndgame(almost)
                             setTrailingslash([...trailingslash, almost])
                             
 
@@ -104,16 +107,17 @@ export default function Cards({
                     >Quase não lembrei</Resultoptions>
 
 
-                    <Resultoptions data-test="zap-btn" color="#2FBE34"
-                        onClick={() => {
+                    <Resultoptions data-test="zap-btn" color="#2FBE34"onClick={() => {
+
                             setResult([...result, flahscard])
                             setFinished(finished + 1)
-                            setEndgame(remembered)
-                            setEndgamestatus("#2FBE34")
                             setIcon("zap-icon")
+                            setEndgamestatus("#2FBE34")
+                            setEndgame(remembered)
                             setTrailingslash([...trailingslash, remembered])
 
                         }}
+
                     >Zap!</Resultoptions>
 
 
@@ -123,8 +127,10 @@ export default function Cards({
 
 
             <Endgamebox color={endgamestatus} display={!result.includes(flahscard) ? true : false}>
+
                 <p data-test="flashcard-text" >pergunta {summary + 1}</p>
                 <img data-test={icon}   src={endgame}></img>
+
             </Endgamebox>
 
 
@@ -169,8 +175,8 @@ const Questionbox = styled.div`
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-}
-`
+    }
+    `
 
 // Styling the number of question box - end 
 
@@ -201,8 +207,8 @@ const Otherquestionbox = styled.div`
     position: absolute;
     bottom: 10px;
     right: 10px;
-}
-`
+    }
+    ` 
 
 // Styling the question box - end
 
@@ -257,7 +263,7 @@ const Resultoptions = styled.button`
     border: 1px solid blue;
     background: ${props => props.color} ;
     padding:5px;
-`
+    `
 
 // Styling the options box - end
 
@@ -265,6 +271,7 @@ const Resultoptions = styled.button`
 // Styling the result box - outset
 
 const Endgamebox = styled.div`
+
     width: 300px;
     height: 35px;
     display:${props => props.display ? 'none' : 'flex'};
@@ -284,8 +291,8 @@ const Endgamebox = styled.div`
     font-size: 16px;
     line-height: 19px;
     text-decoration: line-through;
-}
-`
+    }
+    `
 
 // Styling the result box - end
 

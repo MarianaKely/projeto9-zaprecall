@@ -13,7 +13,7 @@ export default function Footer({
 
 // Constant that enable functionalities on the Footer.js - outset    
 
-    const putassetshere = [...trailingslash]
+    const putassetshere = [...trailingslash];
 
 // Constant that enable functionalities on the Footer.js - end        
 
@@ -33,6 +33,7 @@ export default function Footer({
 
 // Footer.js layout - end
 
+
 /* 
 1- Endgamescreen is the white box who hold the final score
 2- Evaluationspace shows the final score
@@ -44,11 +45,10 @@ export default function Footer({
 // Styling the white box - outset
 
 const Endgamescreen = styled.footer`
+
     width: 100%;
     min-height: 50px;
     background-color: #FFFFFF;
-    position: fixed;
-    bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +58,9 @@ const Endgamescreen = styled.footer`
     font-size: 18px;
     color: #333333;
     padding: 10px;
-`
+    position: fixed;
+    bottom: 0;
+    `
 
 
 // Styling the white box - end
@@ -67,12 +69,13 @@ const Endgamescreen = styled.footer`
 // Styling the final score - outset
 
 const Evaluationspace = styled.div`
+
     display:flex;
     img{
         margin-left: 5px ;
         margin-bottom: 10px ;
     }
-`
+    `
 
 // Styling the final score - end
 
@@ -81,4 +84,4 @@ const Evaluationspace = styled.div`
 
 
 
-// General configuration and rendering the footer - outset
+// General configuration and rendering the footer - end
