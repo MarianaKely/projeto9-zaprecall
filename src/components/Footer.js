@@ -25,7 +25,9 @@ export default function Footer({
         <Endgamescreen data-test="footer" >
 
             <Evaluationspace>
+
                 {trailingslash.map((putassetshere, index) => <img key ={index}  src ={putassetshere} ></img>)}
+                
             </Evaluationspace>
 
                 <p>CONCLUÍDOS {finished}/{ticket.length}</p>

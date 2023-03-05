@@ -27,11 +27,8 @@ export const Bonus = ({Gotogame}) => {
      <Welcomepage>
 
        <div>
-
         <img src={copy}></img>
-
        </div>
-
        <h1>ZapRecall</h1>
        <button data-test="start-btn" onClick={Gotogame}>Iniciar Recall!</button>
 

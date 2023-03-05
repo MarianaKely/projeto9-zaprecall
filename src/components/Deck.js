@@ -3,6 +3,7 @@
 
 
 const cards = [
+
 	{ question: "Antes de Dumbledore, quem era o Diretor de Hogwarts?", answer: "Armando Dippet" },
 	{ question: "Qual é o nome do vilarejo próximo a Hogwarts", answer: "Hogsmeade" },
 	{ question: "Qual feitiço fornece proteção contra Dementadores?", answer: "Expecto Patronum" },
@@ -103,6 +104,7 @@ const cards = [
 	{ question: "Quantas Pedras Filosofais existem?", answer: "Uma" },
 	{ question: "Qual é o termo para uma bruxa ou bruxo que pode ver o futuro?", answer: "Vidente" },
 	{ question: "Qual o nome de nascimento de LOrde Voldemort", answer: "Tom Marvolo Riddle" }
+	
 ]
 
 export default cards
