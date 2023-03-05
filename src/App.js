@@ -30,7 +30,7 @@ export default function App () {
     const [trailingslash, setTrailingslash] = useState([]);
     const [icon, setIcon] = useState("");
     const [questionsarray] = useState([...Deck.sort( () => .5 - Math.random() )]);
-    const [ticket] = useState([...questionsarray.slice(0,2)]);
+    const [ticket] = useState([...questionsarray.slice(0,10)]);
 
 
 // Constants that enable functionalities on bonus page - outset
