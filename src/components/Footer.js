@@ -6,9 +6,11 @@ import styled from 'styled-components';
 
 
 export default function Footer({
-    finished,
+
     trailingslash,
+    finished,
     ticket
+
 }){
 
 // Constant that enable functionalities on the Footer.js - outset    
@@ -25,7 +27,9 @@ export default function Footer({
             <Evaluationspace>
                 {trailingslash.map((putassetshere, index) => <img key ={index}  src ={putassetshere} ></img>)}
             </Evaluationspace>
+
                 <p>CONCLUÍDOS {finished}/{ticket.length}</p>
+
         </Endgamescreen>
         
     )
