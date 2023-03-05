@@ -46,6 +46,9 @@ export default function App () {
  // Constants that enable functionalities on the App.js - end
 
 
+ alert ('SEJA BEM VINDO(A)!');
+
+
     return (
 
 

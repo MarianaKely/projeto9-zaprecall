@@ -17,6 +17,7 @@ import copy from "./assets/img/copy.png";
 
 export const Bonus = ({Gotogame}) => {
 
+
    return(
 
 
