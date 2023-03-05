@@ -11,6 +11,7 @@ import Cards from "./components/Cards";
 import Deck from"./components/Deck";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { Bonus } from './Bonus';
 
 // Import files from js pages - end
 
@@ -28,9 +29,18 @@ export default function App () {
     const [finished, setFinished] = useState(0);
     const [trailingslash, setTrailingslash] = useState([]);
     const [icon, setIcon] = useState("");
-    const [questionsarray] = useState([...Deck.sort( () => .3 - Math.random() )]);
+    const [questionsarray] = useState([...Deck.sort( () => .5 - Math.random() )]);
     const [ticket] = useState([...questionsarray.slice(0,20)]);
+
+
+// Constants that enable functionalities on bonus page - outset
    
+
+    const [bonuspage, setBonuspage] = useState(false)
+    const Gotogame = () => { setBonuspage(true)}
+
+
+// Constants that enable functionalities on bonus page - end    
    
 
  // Constants that enable functionalities on the App.js - end
@@ -43,6 +53,12 @@ export default function App () {
 
 
     <ScreenContainer>
+
+<>
+      <Welcomepage status={Gotogame}>{!bonuspage ?
+
+      <Bonus Gotogame={Gotogame}/>:
+<>
 
         <Header/>
 
@@ -73,6 +89,12 @@ export default function App () {
          trailingslash = {trailingslash}
 />
 
+</>
+} 
+</Welcomepage>
+</>
+
+
     </ScreenContainer>
     )
 
@@ -91,11 +113,23 @@ const ScreenContainer = styled.header`
     width: 375px;
     height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     background-color: #FB6B6B;
     padding-bottom: 200px;
 `
+
+const Welcomepage = styled.div`
+    width: 375px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #FB6B6B;
+    padding-bottom: ${props => props.status ? '50px' : '0'}
+`
+
 
 
 // App.js page styling - end
