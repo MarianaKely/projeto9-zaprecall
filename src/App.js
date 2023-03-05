@@ -30,7 +30,7 @@ export default function App () {
     const [trailingslash, setTrailingslash] = useState([]);
     const [icon, setIcon] = useState("");
     const [questionsarray] = useState([...Deck.sort( () => .5 - Math.random() )]);
-    const [ticket] = useState([...questionsarray.slice(0,20)]);
+    const [ticket] = useState([...questionsarray.slice(0,2)]);
 
 
 // Constants that enable functionalities on bonus page - outset
@@ -46,7 +46,7 @@ export default function App () {
  // Constants that enable functionalities on the App.js - end
 
 
- alert ('SEJA BEM VINDO(A)!');
+
 
 
     return (
