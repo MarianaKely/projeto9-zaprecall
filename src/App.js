@@ -11,7 +11,7 @@ import Cards from "./components/Cards";
 import Deck from"./components/Deck";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { Bonus } from './Bonus';
+import { Welcome } from './Welcome';
 
 // Import files from js pages - end
 
@@ -60,7 +60,7 @@ export default function App () {
 <>
       <Welcomepage status={Gotogame}>{!bonuspage ?
 
-      <Bonus Gotogame={Gotogame}/>:
+      <Welcome Gotogame={Gotogame}/>:
 <>
 
         <Header/>

@@ -15,7 +15,7 @@ import copy from "./assets/img/copy.png";
 // Import images from assets/img - end
 
 
-export const Bonus = ({Gotogame}) => {
+export const Welcome = ({Gotogame}) => {
 
 
    return(
