@@ -113,7 +113,7 @@ export default function App () {
 
 const ScreenContainer = styled.header`
     box-sizing: borderbox;
-    width: 375px;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -123,7 +123,7 @@ const ScreenContainer = styled.header`
 `
 
 const Welcomepage = styled.div`
-    width: 375px;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
